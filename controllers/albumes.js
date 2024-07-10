@@ -51,7 +51,7 @@ const createAlbum = async (req, res) => {
     const nombre = req.body.nombre;
     const artista = req.body.artista;
     const [rows, fields] = await conn.query('INSERT INTO albumes (nombre,artista) VALUES (?,?)',[nombre,artista]);
-    res.send(`Se Creó El Album: ${nombre}`);
+    res.send(`Se Creó El Album ${nombre} Y El Artista Es ${artista}`);
     // Completar con la consulta que crea un album
     // Recordar que los parámetros de una consulta POST se encuentran en req.body
     // Deberían recbir los datos de la siguiente forma:
