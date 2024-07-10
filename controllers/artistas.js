@@ -58,7 +58,7 @@ const updateArtista = async (req, res) => {
     const id = req.params.id;
     const nombre = req.body.nombre;
     const [rows, fields] = await conn.query(`UPDATE artistas SET nombre = ? WHERE id = ?`,[nombre,id]);
-    res.send(`Se Updateo El Artista`);
+    res.send(`Se Updateo El Artista ${nombre}`);
     // Completar con la consulta que actualiza un artista
     // Recordar que en este caso tienen parámetros en req.params (el id) y en req.body (los demás datos)
     // Deberían recibir los datos de la siguiente forma:

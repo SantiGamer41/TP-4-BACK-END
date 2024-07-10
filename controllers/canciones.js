@@ -67,7 +67,7 @@ const createCancion = async (req, res) => {
     const album = req.body.album;
     const duracion = req.body.duracion;
     const [rows, fields] = await conn.query('INSERT INTO canciones (nombre,album,duracion) VALUES (?,?,?)',[nombre,album,duracion]);
-    res.send(`Se Creó La Canción: ${nombre}`);
+    res.send(`Se Creó La Canción: ${nombre} En El Album ${album} Con Una Duración De ${duracion} Segundos`);
     // Completar con la consulta que crea una canción
     // Recordar que los parámetros de una consulta POST se encuentran en req.body
     // Deberían recibir los datos de la siguiente forma:
@@ -89,7 +89,7 @@ const updateCancion = async (req, res) => {
     const duracion = req.body.duracion;    
     const [rows, fields] = await conn.query(`UPDATE canciones SET nombre = ?, album = ?, duracion = ?
     WHERE id = ?`,[nombre,album,duracion,id]);
-    res.send(`Se Updateo La Canción`);
+    res.send(`Se Updateo La Canción ${nombre} el album ahora es ${album} y una duración de ${duracion}`);
      // Completar con la consulta que actualiza una canción
     // Recordar que los parámetros de una consulta PUT se encuentran en req.body
     // Deberían recibir los datos de la siguiente forma:
